@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b6b6b6;
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.auth-container {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 46px;
+}
+
+.auth-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  font-weight: bolder;
+}
+.auth-group input {
+  font-weight: 600;
+  border: none;
+  border-bottom: 1px solid #2A9BC9;
+  outline: none;
+}
+.auth-group a {
+  text-decoration: none;
+}
+
+.auth-btn {
+  background-color: #2A9BC9;
+  color: #fff;
+  width: 100px;
+  border: none;
+  float: right;
+}
+
+.back-sign {
+  color: #2A9BC9;
+  cursor: pointer;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+}
+.loader .dots {
+  width: 3rem;
+  height: 3rem;
+  background-color: #2A9BC9;
+  border-radius: 50%;
+  display: inline-block;
+  animation: 1.5s bounce infinite ease-in-out;
+}
+.loader .dot1 {
+  animation-delay: -0.3s;
+}
+.loader .dot2 {
+  animation-delay: -0.15s;
+}
+
+@keyframes bounce {
+  0%, 50%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 760px) {
+  body {
+    background-color: #fff;
+  }
+
+  .auth-container {
+    width: 420px;
+  }
+}

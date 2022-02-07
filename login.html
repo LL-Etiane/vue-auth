@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="public/images/logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/css/auth.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="loader" v-bind:class="show">
+        <div class="loader d-none">
+          <div class="dots dot1"></div>
+          <div class="dots dot2"></div>
+          <div class="dots dot3"></div>
+        </div>
+      </div>
+      <div id="loginApp" class="auth-container">
+        <h1 class="mt-2 mb-2">Etiane portal</h1>
+        <h6 v-if="step2">
+          <span class="back-sign" @click="backtostep1"> <- </span>{{email}}
+        </h6>
+        <h6 class="text-danger">{{error}}</h6>
+        <form action="" @submit.prevent="nextPassword">
+          <div v-if="step1">
+            <div class="auth-group mt-2">
+              <label for="email">Sign in</label>
+              <input type="email" name="email" id="email" v-model="email" />
+            </div>
+
+            <div class="auth-text mt-2">
+              <p>No account? <a href="#">Create one!</a></p>
+            </div>
+
+            <button class="auth-btn mt-4">Next</button>
+          </div>
+
+          <div v-if="step2">
+            <div class="auth-group mt-2">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                v-model="password"
+              />
+            </div>
+
+            <div class="auth-text mt-2">
+              <p>No account? <a href="#">Create one!</a></p>
+            </div>
+
+            <button class="auth-btn mt-4">Next</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/vue.js"></script>
+    <script src="public/js/login.js"></script>
+  </body>
+</html>
